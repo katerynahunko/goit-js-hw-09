@@ -8,11 +8,7 @@ submitBtn.addEventListener("click", onStart);
 
 function onStart(event) {
   event.preventDefault();
-
-  // const promiseAmount = parseInt(amount.value);
-  // const promiseDelay = parseInt(delay.value);
-  // const promiseStep = parseInt(step.value);
-  
+ 
   const promiseAmount = amount.value;
   const promiseDelay = delay.value;
   const promiseStep = step.value;
