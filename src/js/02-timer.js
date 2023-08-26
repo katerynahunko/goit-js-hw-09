@@ -35,7 +35,7 @@ startBtn.addEventListener('click', () => {
   clearInterval(timerInterval);
   targetDate = new Date(datetimePicker.value);
   if (new Date() > targetDate) {
-    window.alert('Please choose a date in the future');
+    Notiflix.Notify.warning('Please choose a date in the future');
     return;
   }
   updateTimer();
