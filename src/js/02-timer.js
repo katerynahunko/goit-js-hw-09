@@ -23,8 +23,6 @@ const options = {
     if (currentDate > selectedDate) {
       Notiflix.Notify.warning('Please choose a date in the future');
       startBtn.disabled = true;
-    } else {
-      startBtn.disabled = false;
     }
   },
 };
@@ -48,9 +46,10 @@ function updateTimer() {
   if (!targetDate) return;
   const timerTime = targetDate - new Date();
 
-  if (0 >= timerTime) {
+  if (timerTime <= 0) {
+    
+    startBtn.disabled = true;
     clearInterval(timerInterval);
-    startBtn.disabled = false;
     datetimePicker.disabled = false;
     return;
   }
