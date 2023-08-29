@@ -19,14 +19,17 @@ const options = {
   onClose(selectedDates) {
     const selectedDate = selectedDates[0];
     const currentDate = new Date();
-
+    
     if (currentDate > selectedDate) {
-      Notiflix.Notify.warning('Please choose a date in the future');
       startBtn.disabled = true;
+      Notiflix.Notify.warning('Please choose a date in the future');
+         } else {
+      startBtn.disabled = false;
     }
   },
 };
 
+startBtn.disabled = true;
 flatpickr(datetimePicker, options);
 
 startBtn.addEventListener('click', () => {
@@ -47,9 +50,8 @@ function updateTimer() {
   const timerTime = targetDate - new Date();
 
   if (timerTime <= 0) {
-    
-    startBtn.disabled = true;
     clearInterval(timerInterval);
+    startBtn.disabled = false;
     datetimePicker.disabled = false;
     return;
   }

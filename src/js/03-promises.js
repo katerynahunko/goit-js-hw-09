@@ -10,9 +10,9 @@ submitBtn.addEventListener("click", onStart);
 function onStart(event) {
   event.preventDefault();
  
-  const promiseAmount = amount.value;
-  const promiseDelay = delay.value;
-  const promiseStep = step.value;
+  const promiseAmount = +amount.value;
+  const promiseDelay = +delay.value;
+  const promiseStep = +step.value;
 
   for (let i = 1; i <= promiseAmount; i += 1) {
     const currentDelay = promiseDelay + (i - 1) * promiseStep;
